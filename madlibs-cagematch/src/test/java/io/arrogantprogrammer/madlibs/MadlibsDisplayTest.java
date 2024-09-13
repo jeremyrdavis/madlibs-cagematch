@@ -8,15 +8,16 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @QuarkusTest
-public class MadlibsServiceTest {
+public class MadlibsDisplayTest {
 
     @Inject
     MadlibsService madlibsService;
 
     @Test
-    public void testGetRandomMadlib() {
-        MadlibVO madlibVO = madlibsService.randomMadlib();
+    public void testDisplay() {
+        MadlibVO madlibVO = madlibsService.getMadlib(0);
         assertNotNull(madlibVO);
         assertEquals(7, madlibVO.replacementMap().size());
+        assertEquals("Name", madlibVO.replacementMap().get(3));
     }
 }

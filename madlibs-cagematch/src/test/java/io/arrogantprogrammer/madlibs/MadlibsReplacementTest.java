@@ -7,7 +7,7 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class MadlibsTest {
+public class MadlibsReplacementTest {
 
     @Test
     void testMadlibs() {
@@ -64,15 +64,15 @@ public class MadlibsTest {
         the opportunity to play a giraffe on them.
         """;
 
-    Map<Integer, Replacement> replacements = new HashMap<>(){{
-        put(1, Replacement.NOUN);
-        put(2, Replacement.ADJECTIVE);
-        put(3, Replacement.NOUN);
-        put(4, Replacement.NOUN);
-        put(5, Replacement.ADJECTIVE);
-        put(6, Replacement.NOUN);
-        put(7, Replacement.NOUN);
-        put(8, Replacement.NOUN);
+    Map<Integer, String> replacements = new HashMap<>(){{
+        put(1, "Noun");
+        put(2, "Adjective");
+        put(3, "Noun");
+        put(4, "Noun");
+        put(5, "Adjective");
+        put(6, "Noun");
+        put(7, "Noun");
+        put(8, "Noun");
     }};
 
     String orignalText = """

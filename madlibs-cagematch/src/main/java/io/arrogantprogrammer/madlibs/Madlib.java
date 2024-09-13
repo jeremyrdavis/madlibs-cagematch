@@ -5,9 +5,9 @@ import java.util.Map;
 public class Madlib {
 
     String orignalText;
-    Map<Integer, Replacement> replacementMap;
+    Map<Integer, String> replacementMap;
 
-    public Madlib(String orignalText, Map<Integer, Replacement> replacements) {
+    public Madlib(String orignalText, Map<Integer, String> replacements) {
         this.orignalText = orignalText;
         this.replacementMap = replacements;
     }
