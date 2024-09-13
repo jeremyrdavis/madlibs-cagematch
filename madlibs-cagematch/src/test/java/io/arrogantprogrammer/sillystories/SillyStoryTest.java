@@ -1,4 +1,4 @@
-package io.arrogantprogrammer.madlibs;
+package io.arrogantprogrammer.sillystories;
 
 import io.quarkus.test.junit.QuarkusTest;
 import jakarta.inject.Inject;
@@ -8,15 +8,16 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @QuarkusTest
-public class MadlibsServiceTest {
+public class SillyStoryTest {
 
     @Inject
-    MadlibsService madlibsService;
+    SillyStoryService sillyStoryService;
 
     @Test
-    public void testGetRandomMadlib() {
-        MadlibVO madlibVO = madlibsService.randomMadlib();
+    public void testDisplay() {
+        MadlibVO madlibVO = sillyStoryService.getMadlib(0);
         assertNotNull(madlibVO);
         assertEquals(7, madlibVO.replacementMap().size());
+        assertEquals("Name", madlibVO.replacementMap().get(3));
     }
 }

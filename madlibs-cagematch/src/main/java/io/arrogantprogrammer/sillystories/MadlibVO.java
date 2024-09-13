@@ -1,4 +1,4 @@
-package io.arrogantprogrammer.madlibs;
+package io.arrogantprogrammer.sillystories;
 
 import java.util.Map;
 

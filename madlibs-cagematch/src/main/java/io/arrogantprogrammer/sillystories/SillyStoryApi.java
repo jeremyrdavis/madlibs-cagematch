@@ -1,4 +1,4 @@
-package io.arrogantprogrammer.madlibs;
+package io.arrogantprogrammer.sillystories;
 
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.Path;
@@ -9,7 +9,7 @@ import jakarta.ws.rs.core.Response;
 @Path("/madlibs")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
-public class MadlibsApi {
+public class SillyStoryApi {
 
     @Path("/play")
     public Response getMadlib() {

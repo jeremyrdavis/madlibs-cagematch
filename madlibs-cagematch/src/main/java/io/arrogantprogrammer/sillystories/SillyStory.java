@@ -1,13 +1,13 @@
-package io.arrogantprogrammer.madlibs;
+package io.arrogantprogrammer.sillystories;
 
 import java.util.Map;
 
-public class Madlib {
+public class SillyStory {
 
     String orignalText;
     Map<Integer, String> replacementMap;
 
-    public Madlib(String orignalText, Map<Integer, String> replacements) {
+    public SillyStory(String orignalText, Map<Integer, String> replacements) {
         this.orignalText = orignalText;
         this.replacementMap = replacements;
     }

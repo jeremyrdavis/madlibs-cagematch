@@ -1,4 +1,4 @@
-package io.arrogantprogrammer.madlibs;
+package io.arrogantprogrammer.sillystories;
 
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
@@ -8,7 +8,7 @@ import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.is;
 
 @QuarkusTest
-public class MadLibsApiTest {
+public class SillyStoryApiTest {
 
     @Test
     public void testGetMadlib() {

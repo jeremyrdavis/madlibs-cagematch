@@ -1,4 +1,4 @@
-package io.arrogantprogrammer.madlibs;
+package io.arrogantprogrammer.sillystories;
 
 import org.junit.jupiter.api.Test;
 
@@ -7,7 +7,7 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class MadlibsReplacementTest {
+public class SillyStoryReplacementTest {
 
     @Test
     void testMadlibs() {
@@ -22,8 +22,8 @@ public class MadlibsReplacementTest {
             put(8, "giraffe");
         }};
 
-        Madlib madlib = getMadlib();
-        String actualText = madlib.getMadlibText(inputs);
+        SillyStory sillyStory = getMadlib();
+        String actualText = sillyStory.getMadlibText(inputs);
         System.out.println("----------");
         System.out.println(actualText);
         System.out.println("----------");
@@ -31,8 +31,8 @@ public class MadlibsReplacementTest {
         assertEquals(expectedText, actualText);
     }
 
-    private Madlib getMadlib() {
-        return new Madlib(orignalText, replacements);
+    private SillyStory getMadlib() {
+        return new SillyStory(orignalText, replacements);
     }
 
     String expectedText = """
