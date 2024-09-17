@@ -1,4 +1,4 @@
-# Madlibs Cagematch
+# SillyStories Cagematch
 
 ----------
 And with a roar, Chet’s banana leaped forward as he
