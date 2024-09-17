@@ -4,16 +4,16 @@ import java.util.Map;
 
 public class SillyStory {
 
-    String orignalText;
+    String originalText;
     Map<Integer, String> replacementMap;
 
-    public SillyStory(String orignalText, Map<Integer, String> replacements) {
-        this.orignalText = orignalText;
+    public SillyStory(String originalText, Map<Integer, String> replacements) {
+        this.originalText = originalText;
         this.replacementMap = replacements;
     }
 
-    public String getMadlibText(Map<Integer, String> replacementValues) {
-        String madlibText = orignalText;
+    public String getOriginalText(Map<Integer, String> replacementValues) {
+        String madlibText = originalText;
         for (Map.Entry<Integer, String> entry : replacementValues.entrySet()) {
             String marker = "%0" + entry.getKey() + "%";
             System.out.println("Replacing " + marker + " with " + entry.getValue());

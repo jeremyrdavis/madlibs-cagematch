@@ -23,7 +23,7 @@ public class SillyStoryReplacementTest {
         }};
 
         SillyStory sillyStory = getMadlib();
-        String actualText = sillyStory.getMadlibText(inputs);
+        String actualText = sillyStory.getOriginalText(inputs);
         System.out.println("----------");
         System.out.println(actualText);
         System.out.println("----------");

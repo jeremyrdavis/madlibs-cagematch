@@ -14,9 +14,9 @@ public class SillyStoryServiceTest {
     SillyStoryService sillyStoryService;
 
     @Test
-    public void testGetRandomMadlib() {
-        MadlibVO madlibVO = sillyStoryService.randomMadlib();
-        assertNotNull(madlibVO);
-        assertEquals(7, madlibVO.replacementMap().size());
+    public void testGetRandomSillyStory() {
+        SillyStoryVO sillyStoryVO = sillyStoryService.randomSillyStory();
+        assertNotNull(sillyStoryVO);
+        assertEquals(7, sillyStoryVO.replacementMap().size());
     }
 }

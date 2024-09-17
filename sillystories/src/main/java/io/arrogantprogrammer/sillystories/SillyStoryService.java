@@ -18,6 +18,7 @@ public class SillyStoryService {
                 put(1, "Noun");
                 put(2, "Noun");
                 put(3, "Name");
+
                 put(4, "Verb");
                 put(5, "Noun");
                 put(6, "Noun");
@@ -25,11 +26,11 @@ public class SillyStoryService {
             }}));
         }};
 
-    MadlibVO randomMadlib() {
-        return new MadlibVO(sillyStories.get(0).orignalText, sillyStories.get(0).replacementMap);
+    SillyStoryVO randomSillyStory() {
+        return new SillyStoryVO(sillyStories.get(0).originalText, sillyStories.get(0).replacementMap);
     }
 
-    MadlibVO getMadlib(int index) {
-        return new MadlibVO(sillyStories.get(index).orignalText, sillyStories.get(index).replacementMap);
+    SillyStoryVO getSillyStory(int index) {
+        return new SillyStoryVO(sillyStories.get(index).originalText, sillyStories.get(index).replacementMap);
     }
 }

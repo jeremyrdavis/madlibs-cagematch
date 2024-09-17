@@ -15,9 +15,9 @@ public class SillyStoryTest {
 
     @Test
     public void testDisplay() {
-        MadlibVO madlibVO = sillyStoryService.getMadlib(0);
-        assertNotNull(madlibVO);
-        assertEquals(7, madlibVO.replacementMap().size());
-        assertEquals("Name", madlibVO.replacementMap().get(3));
+        SillyStoryVO sillyStoryVO = sillyStoryService.getSillyStory(0);
+        assertNotNull(sillyStoryVO);
+        assertEquals(7, sillyStoryVO.replacementMap().size());
+        assertEquals("Name", sillyStoryVO.replacementMap().get(3));
     }
 }
