@@ -2,5 +2,6 @@ package io.arrogantprogrammer.sillystories;
 
 public enum Replacement {
 
-    ADJECTIVE, ADVERB, NOUN, VERB;
+    ADJECTIVE, ADVERB, NOUN, VERB,
+    NAME;
 }
