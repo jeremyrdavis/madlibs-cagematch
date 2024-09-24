@@ -16,30 +16,18 @@ public class SillyStoryService {
             There once was a princess who lived in a %01% in a great wood.  She had a pet %02% named %03% who followed her everywhere she went.
             One day she took a walk in the %04% and met a %05% who offered her magical %06%.  The %06% would turn anything she wanted into a %07%.
             """,
-            new HashMap<>(){{
-                put(1, Replacement.NOUN);
-                put(2, Replacement.NOUN);
-                put(3, Replacement.NAME);
-
-                put(4, Replacement.VERB);
-                put(5, Replacement.NOUN);
-                put(6, Replacement.NOUN);
-                put(7, Replacement.NOUN);
+            new ArrayList<ReplacementNeeded>(){{
+                add(new ReplacementNeeded(1, WordType.NOUN));
+                add(new ReplacementNeeded(2, WordType.NOUN));
+                add(new ReplacementNeeded(3, WordType.NAME));
+                add(new ReplacementNeeded(4, WordType.VERB));
+                add(new ReplacementNeeded(5, WordType.NOUN));
+                add(new ReplacementNeeded(6, WordType.NOUN));
+                add(new ReplacementNeeded(7, WordType.NOUN));
             }}));
         }};
 
     SillyStoryVO randomSillyStory() {
-        return new SillyStoryVO(sillyStories.get(0).originalText, sillyStories.get(0).replacementMap);
-    }
-
-    SillyStoryVO getSillyStory(int id) {
-        return new SillyStoryVO(sillyStories.get(id).originalText, sillyStories.get(id).replacementMap);
-    }
-
-    SillyStoryVO randomValues(Long id) {
-        SillyStory sillyStory = sillyStories.get(id);
-        sillyStory.replacementMap.values().forEach(v -> {
-
-        });
+        return new SillyStoryVO(sillyStories.get(1L).id, sillyStories.get(1L).replacementNeeds);
     }
 }

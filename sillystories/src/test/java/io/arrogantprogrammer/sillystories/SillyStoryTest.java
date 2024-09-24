@@ -1,23 +1,21 @@
 package io.arrogantprogrammer.sillystories;
 
-import io.quarkus.test.junit.QuarkusTest;
-import jakarta.inject.Inject;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import java.util.List;
 
-@QuarkusTest
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class SillyStoryTest {
 
-    @Inject
-    SillyStoryService sillyStoryService;
-
     @Test
-    public void testDisplay() {
-        SillyStoryVO sillyStoryVO = sillyStoryService.getSillyStory(0);
-        assertNotNull(sillyStoryVO);
-        assertEquals(7, sillyStoryVO.replacementMap().size());
-        assertEquals("Name", sillyStoryVO.replacementMap().get(3));
+    public void testJson() {
+
+        SillyStory sillyStory = new SillyStory(1L,"There once was a %01%", List.of(new ReplacementNeeded(1, WordType.NOUN)));
+        assertEquals(1, sillyStory.getNumberOfNouns());
+
+        sillyStory.build(List.of(new ReplacementWord(1, "cat")));
+        assertEquals("There once was a cat", sillyStory.getUpdatedStory());
     }
+
 }

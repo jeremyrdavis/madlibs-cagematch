@@ -1,6 +1,6 @@
 package io.arrogantprogrammer.sillystories;
 
-import java.util.Map;
+import java.util.List;
 
-public record SillyStoryVO(String originalText, Map<Integer, Replacement> replacementMap) {
+public record SillyStoryVO(Long id, List<ReplacementNeeded> replacementsNeeded) {
 }

@@ -1,52 +1,49 @@
 package io.arrogantprogrammer.sillystories;
 
-import java.util.Map;
-import java.util.stream.Collectors;
+import java.util.List;
 
 public class SillyStory {
 
     Long id;
     String originalText;
-    Map<Integer, Replacement> replacementMap;
+    String updatedText;
+    List<ReplacementNeeded> replacementNeeds;
 
-    public SillyStory(Long id, String originalText, Map<Integer, Replacement> replacements) {
+    SillyStory(Long id, String originalText, List<ReplacementNeeded> replacementNeeds) {
         this.id = id;
         this.originalText = originalText;
-        this.replacementMap = replacements;
+        this.replacementNeeds = replacementNeeds;
     }
 
-    public String getOriginalText(Map<Integer, String> replacementValues) {
-        String madlibText = originalText;
-        for (Map.Entry<Integer, String> entry : replacementValues.entrySet()) {
-            String marker = "%0" + entry.getKey() + "%";
-            System.out.println("Replacing " + marker + " with " + entry.getValue());
-            madlibText = madlibText.replace(marker, entry.getValue());
-        }
-        return madlibText;
+    public String getUpdatedStory() {
+        return updatedText;
     }
 
     Integer getNumberOfNouns() {
-        return replacementMap.entrySet().stream()
-            .filter(entry -> entry.getValue().equals(Replacement.NOUN))
-            .collect(Collectors.toList()).size();
+        return getNumberOfType(WordType.NOUN);
     }
 
     Integer getNumberOfAdjectives() {
-        return replacementMap.entrySet().stream()
-                .filter(entry -> entry.getValue().equals(Replacement.ADJECTIVE))
-                .collect(Collectors.toList()).size();
+        return getNumberOfType(WordType.ADJECTIVE);
     }
 
     Integer getNumberOfAdverbs() {
-        return replacementMap.entrySet().stream()
-                .filter(entry -> entry.getValue().equals(Replacement.ADVERB))
-                .collect(Collectors.toList()).size();
+        return getNumberOfType(WordType.ADVERB);
     }
 
     Integer getNumberOfVerbs() {
-        return replacementMap.entrySet().stream()
-                .filter(entry -> entry.getValue().equals(Replacement.VERB))
-                .collect(Collectors.toList()).size();
+        return getNumberOfType(WordType.VERB);
     }
 
+    private Integer getNumberOfType(WordType wordType) {
+        return replacementNeeds.stream()
+                .filter(needed -> needed.wordType().equals(wordType))
+                .toList().size();
+    }
+
+    void build(List<ReplacementWord> replacementWords) {
+        replacementWords.forEach(replacementWord -> {
+            updatedText = originalText.replace("%0" + replacementWord.position() + "%", replacementWord.word());
+        });
+    }
 }

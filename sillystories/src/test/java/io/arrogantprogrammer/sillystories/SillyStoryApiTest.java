@@ -16,7 +16,7 @@ public class SillyStoryApiTest {
                 .get("/sillystories/play")
                 .then()
                 .statusCode(200)
-                .body("originalText", notNullValue());
+                .body("replacementsNeeded", notNullValue());
 
     }
 }

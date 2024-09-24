@@ -1,6 +1,6 @@
 package io.arrogantprogrammer.sillystories;
 
-public enum Replacement {
+public enum WordType {
 
     ADJECTIVE, ADVERB, NOUN, VERB,
     NAME;

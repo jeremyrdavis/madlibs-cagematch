@@ -1,5 +1,6 @@
 package io.arrogantprogrammer.sillystories;
 
+import io.quarkus.logging.Log;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;
@@ -7,8 +8,6 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
-
-import java.util.Map;
 
 @Path("/sillystories")
 @Consumes(MediaType.APPLICATION_JSON)
@@ -20,13 +19,15 @@ public class SillyStoryApi {
 
     @Path("/play")
     @GET
-    public Response getMadlib() {
-        return Response.ok().entity(sillyStoryService.randomSillyStory()).build();
+    public Response getSillyStory() {
+        SillyStoryVO sillyStoryVO = sillyStoryService.randomSillyStory();
+        Log.debugf("Silly story: %s", sillyStoryVO);
+        return Response.ok().entity(sillyStoryVO).build();
     }
 
     @Path("/random")
     @GET
     public Response getRandomStoryWithRandomValues(Long id) {
-        SillyStoryVO sillyStoryVO = sillyStoryService.randomValues(id);
+        return Response.ok().build();
     }
 }
