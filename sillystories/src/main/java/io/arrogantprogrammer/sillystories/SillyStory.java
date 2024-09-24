@@ -19,31 +19,7 @@ public class SillyStory {
         return updatedText;
     }
 
-    Integer getNumberOfNouns() {
-        return getNumberOfType(WordType.NOUN);
-    }
-
-    Integer getNumberOfAdjectives() {
-        return getNumberOfType(WordType.ADJECTIVE);
-    }
-
-    Integer getNumberOfAdverbs() {
-        return getNumberOfType(WordType.ADVERB);
-    }
-
-    Integer getNumberOfVerbs() {
-        return getNumberOfType(WordType.VERB);
-    }
-
-    private Integer getNumberOfType(WordType wordType) {
-        return replacementNeeds.stream()
-                .filter(needed -> needed.wordType().equals(wordType))
-                .toList().size();
-    }
-
     void build(List<ReplacementWord> replacementWords) {
-        replacementWords.forEach(replacementWord -> {
-            updatedText = originalText.replace("%0" + replacementWord.position() + "%", replacementWord.word());
-        });
+        replacementWords.forEach(replacementWord -> updatedText = originalText.replace("%0" + replacementWord.position() + "%", replacementWord.word()));
     }
 }

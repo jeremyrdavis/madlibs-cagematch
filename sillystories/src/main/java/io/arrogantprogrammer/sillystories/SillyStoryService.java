@@ -4,7 +4,6 @@ import jakarta.enterprise.context.ApplicationScoped;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @ApplicationScoped
@@ -16,7 +15,7 @@ public class SillyStoryService {
             There once was a princess who lived in a %01% in a great wood.  She had a pet %02% named %03% who followed her everywhere she went.
             One day she took a walk in the %04% and met a %05% who offered her magical %06%.  The %06% would turn anything she wanted into a %07%.
             """,
-            new ArrayList<ReplacementNeeded>(){{
+            new ArrayList<>(){{
                 add(new ReplacementNeeded(1, WordType.NOUN));
                 add(new ReplacementNeeded(2, WordType.NOUN));
                 add(new ReplacementNeeded(3, WordType.NAME));

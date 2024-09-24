@@ -27,7 +27,7 @@ public class SillyStoryApi {
 
     @Path("/random")
     @GET
-    public Response getRandomStoryWithRandomValues(Long id) {
+    public Response getRandomStoryWithRandomValues() {
         return Response.ok().build();
     }
 }
