@@ -20,9 +20,9 @@ public class SillyStoryApi {
     @Path("/play")
     @GET
     public Response getSillyStory() {
-        SillyStoryVO sillyStoryVO = sillyStoryService.randomSillyStory();
-        Log.debugf("Silly story: %s", sillyStoryVO);
-        return Response.ok().entity(sillyStoryVO).build();
+        StoryRequirements storyRequirements = sillyStoryService.randomSillyStoryRequirements();
+        Log.debugf("Story requirements: %s", storyRequirements);
+        return Response.ok().entity(storyRequirements).build();
     }
 
     @Path("/random")

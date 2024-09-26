@@ -7,12 +7,12 @@ public class SillyStory {
     Long id;
     String originalText;
     String updatedText;
-    List<ReplacementNeeded> replacementNeeds;
+    List<ReplacementWordType> replacementWordTypes;
 
-    SillyStory(Long id, String originalText, List<ReplacementNeeded> replacementNeeds) {
+    SillyStory(Long id, String originalText, List<ReplacementWordType> replacementWordTypes) {
         this.id = id;
         this.originalText = originalText;
-        this.replacementNeeds = replacementNeeds;
+        this.replacementWordTypes = replacementWordTypes;
     }
 
     public String getUpdatedStory() {

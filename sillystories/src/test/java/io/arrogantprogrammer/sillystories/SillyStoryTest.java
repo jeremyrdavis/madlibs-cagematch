@@ -11,7 +11,7 @@ public class SillyStoryTest {
     @Test
     public void testJson() {
 
-        SillyStory sillyStory = new SillyStory(1L,"There once was a %01%", List.of(new ReplacementNeeded(1, WordType.NOUN)));
+        SillyStory sillyStory = new SillyStory(1L,"There once was a %01%", List.of(new ReplacementWordType(1, WordType.NOUN)));
 
         sillyStory.build(List.of(new ReplacementWord(1, "cat")));
         assertEquals("There once was a cat", sillyStory.getUpdatedStory());
